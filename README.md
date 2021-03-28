@@ -11,6 +11,7 @@ Circuit:
 
 Waveform:
 
-![image](https://user-images.githubusercontent.com/22993146/112427048-fada8800-8d5e-11eb-9047-f9ab0412b8b7.png)
+![image](https://user-images.githubusercontent.com/22993146/112762493-8d0fb400-901d-11eb-9aa5-a821e41928ae.png)
+
 
 
