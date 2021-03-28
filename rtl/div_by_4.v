@@ -4,8 +4,16 @@ module div_by_4(
   output reg clk_out
 );
 
+//-----------------------------------------------
+// Register Declaration
+//-----------------------------------------------
+
 reg clk_out_a;
 
+
+//-----------------------------------------------
+// 1st Flip Flop Delaying
+//-----------------------------------------------
 
 always @(posedge clk_in or negedge reset_n)
   begin
@@ -15,12 +23,15 @@ always @(posedge clk_in or negedge reset_n)
       end 
     else
       begin
-       clk_out_a <= (~clk_out || ~ clk_out_a);
+       clk_out_a <= ~ clk_out_a;
       end
   end
 
+//-----------------------------------------------
+// 2nd flip flip Delaying
+//-----------------------------------------------
 
-always @(posedge clk_in or negedge reset_n)
+always @(posedge clk_out_a or negedge reset_n)
   begin
     if(!reset_n)
       begin
@@ -28,7 +39,7 @@ always @(posedge clk_in or negedge reset_n)
       end 
     else
       begin
-       clk_out <= clk_out_a; 
+       clk_out <= ~clk_out; 
       end
   end
 
